@@ -1,0 +1,76 @@
+# Loan API
+
+This is a simple loan API that allows users to register, view their information, and apply for loans. The API has the following features:
+
+- User registration
+- View user information
+- Apply for different types of loans (fast loan, auto loan, instalment loan)
+- View loan history
+- Update and delete loan applications (only if the status is "Processing")
+
+The API is built with a solid architecture that preserves the separation of concerns and uses design patterns to improve maintainability and extensibility. The application has built-in logging and request validation, and it is fully covered by tests. The API also uses OpenAPI for documentation and follows clean coding principles.
+
+## User Fields
+
+Each user has the following fields:
+
+- First name
+- Last name
+- Age
+- Email
+- Monthly income
+
+## Loan Fields
+
+Each loan has the following fields:
+
+- Type (fast loan, auto loan, instalment loan)
+- Amount
+- Currency
+- Period
+- Status (defaults: "Processing")
+
+## Installation
+
+To create an installation guide for a C# web API, you can follow these steps:
+
+1. Prerequisites:
+
+   - Make sure you have the latest version of .NET Core installed on your machine.
+   - Install a text editor or development environment of your choice, such as Visual Studio or Jetbrains Rider.
+
+2. Clone or download the repository:
+   - Navigate to the repository where the web API code is hosted (e.g. on GitHub).
+   - Click the "Clone or download" button and copy the URL. 
+   - Open a terminal and navigate to the directory where you want to clone the repository.
+   - Run the following command to clone the repository:
+   ```bash
+     git clone https://github.com/ananidze/loan_api.git
+   ```
+
+3. Build and run the project:
+
+   - Open the project in your text editor or development environment.
+   - Build the project by selecting "Build > Build Solution" from the menu.
+   - Run the project by selecting "Debug > Start Without Debugging" from the menu.
+
+4. Test the API:
+
+   - To test the API, you can use a tool like Postman or curl.
+   - Send a request to the API using the appropriate method (e.g. GET, POST, PUT, DELETE) and verify that the expected response is returned.
+## Usage
+
+To use this API, you can use any HTTP client to send requests to the following endpoints:
+
+### User Registration
+
+To register a new user, send a `POST` request to the `/users` endpoint with the following body:
+
+```json
+{
+    "firstName": "John",
+    "lastName": "Doe",
+    "age": 30,
+    "email": "string"
+}
+```

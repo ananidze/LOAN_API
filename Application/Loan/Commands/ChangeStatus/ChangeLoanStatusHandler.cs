@@ -17,7 +17,6 @@ public class ChangeLoanStatusHandler : IRequestHandler<UpdateLoanStatusCommand>
     
     public async Task<Unit> Handle(UpdateLoanStatusCommand request, CancellationToken cancellationToken)
     {
-        Console.WriteLine($"Id : {request.Id}");
         var loan = await _context.Loans.FirstOrDefaultAsync(x => x.Id == request.Id, cancellationToken: cancellationToken);
         if (loan == null)
         {

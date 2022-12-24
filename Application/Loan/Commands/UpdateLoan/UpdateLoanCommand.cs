@@ -2,7 +2,7 @@ using Domain.Enums;
 using MediatR;
 namespace Application.Loan.Commands.UpdateLoan;
 
-public record UpdateLoanCommand(int Id) : IRequest
+public record UpdateLoanCommand() : IRequest
 {
     public LoanType LoanType { get; set; }
     public decimal LoanAmount { get; set; }
@@ -10,4 +10,5 @@ public record UpdateLoanCommand(int Id) : IRequest
     public DateTime LoanStartDate { get; set; }
     public DateTime LoanEndDate { get; set; }
     public LoanStatus LoanStatus { get; set; }
+    public int Id { get; set; }
 }

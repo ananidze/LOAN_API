@@ -39,9 +39,10 @@ public class LoanController : ApiControllerBase
     }
     
     [HttpPut("{id:int}")]
-    public async Task<ActionResult<Loan>> Update(int id, UpdateLoanCommand command)
+    public async Task<ActionResult<Loan>> Update(int id, [FromBody] UpdateLoanCommand command)
     {
-        var loan = await Mediator.Send(new UpdateLoanCommand(id));
+        command.Id = id;
+        await Mediator.Send(command);
         return Ok(command);
     }
     

@@ -1,8 +1,7 @@
-using Application.User.Commands.CreateUser;
 using Infrastructure;
 using MediatR;
 
-namespace Application.User.Commands;
+namespace Application.User.Commands.CreateUser;
 
 public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand>
 {

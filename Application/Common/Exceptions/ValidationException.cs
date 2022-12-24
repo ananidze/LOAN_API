@@ -1,5 +1,3 @@
-using FluentValidation.Results;
-
 namespace Application.Common.Exceptions;
 
 public class ValidationException : Exception

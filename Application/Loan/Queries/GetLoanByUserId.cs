@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Application.Loan.Queries;
 
-public record GetLoanByUserId(int id) : IRequest<IEnumerable<Domain.Entities.Loan>>;
+public record GetLoanByUserId(int Id) : IRequest<IEnumerable<Domain.Entities.Loan>>;
 
 public class GetLoanByUserIdHandler : IRequestHandler<GetLoanByUserId, IEnumerable<Domain.Entities.Loan>>
 {
@@ -18,7 +18,7 @@ public class GetLoanByUserIdHandler : IRequestHandler<GetLoanByUserId, IEnumerab
     public async Task<IEnumerable<Domain.Entities.Loan>> Handle(GetLoanByUserId request, CancellationToken cancellationToken)
     {
         var loans = await _context.Users
-            .Where(x => x.Id == request.id)
+            .Where(x => x.Id == request.Id)
             .SelectMany(x => x.Loans)
             .ToListAsync(cancellationToken);
         

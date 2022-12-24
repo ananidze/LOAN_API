@@ -1,4 +1,5 @@
 using Application.User.Commands;
+using Application.User.Commands.CreateUser;
 using Application.User.Queries;
 using Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
